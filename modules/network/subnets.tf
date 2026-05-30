@@ -19,8 +19,8 @@ locals {
 
 resource "azurerm_subnet" "this" {
   for_each = local.flattened_subnets
-  
-  name                 = each.value.is_pe_subnet ? "subnet-private-endpoint" : "subnet-${replace(each.value.subnet_key, "_", "-")}"
+
+  name                 = "subnet-${replace(each.value.subnet_key, "_", "-")}"
   resource_group_name  = var.resource_group_name
   virtual_network_name = azurerm_virtual_network.this[each.value.vnet_key].name
   address_prefixes     = [each.value.cidr]

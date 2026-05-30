@@ -18,10 +18,10 @@ variable "vnets" {
     name = string
     cidr = list(string)
     subnets = map(object({
-      cidr                           = string
-      private_endpoint_network_policies = optional(string)
+      cidr                                  = string
+      private_endpoint_network_policies     = optional(string)
       private_link_service_network_policies = optional(string)
-      delegation                     = optional(string)
+      delegation                            = optional(string)
     }))
   }))
   description = "Map of VNets and their subnets"

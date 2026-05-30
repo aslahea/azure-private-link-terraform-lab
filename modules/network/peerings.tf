@@ -1,13 +1,12 @@
 locals {
-  vnet_keys_list = keys(var.vnets)
+  # Identify spokes (all VNets except VNet 1 which acts as the Hub)
+  spoke_keys = slice(local.vnet_keys, 1, length(local.vnet_keys))
 
+  # Generate bidirectional peerings dynamically between Hub and Spokes
   peering_pairs = merge([
-    for src_key in local.vnet_keys_list : {
-      for dst_key in local.vnet_keys_list :
-      "${src_key}_to_${dst_key}" => {
-        src_key = src_key
-        dst_key = dst_key
-      } if src_key != dst_key
+    for spoke in local.spoke_keys : {
+      "${local.vnet1_key}_to_${spoke}" = { src_key = local.vnet1_key, dst_key = spoke }
+      "${spoke}_to_${local.vnet1_key}" = { src_key = spoke, dst_key = local.vnet1_key }
     }
   ]...)
 }
