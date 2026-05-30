@@ -1,0 +1,59 @@
+└── private-link-lab
+    ├── environments
+    │   ├── dev
+    │   │   ├── backend.tf
+    │   │   ├── main.tf
+    │   │   ├── providers.tf
+    │   │   ├── terraform.tfvars
+    │   │   ├── variables.tf
+    │   │   └── versions.tf
+    │   ├── prod
+    │   │   ├── main.tf
+    │   │   ├── providers.tf
+    │   │   ├── terraform.tfvars
+    │   │   └── variables.tf
+    │   └── stage
+    │       ├── main.tf
+    │       ├── providers.tf
+    │       ├── terraform.tfvars
+    │       └── variables.tf
+    ├── modules
+    │   ├── linux_vm
+    │   │   ├── main.tf
+    │   │   ├── outputs.tf
+    │   │   └── variables.tf
+    │   ├── monitoring
+    │   │   ├── main.tf
+    │   │   └── variables.tf
+    │   ├── network
+    │   │   ├── locals.tf
+    │   │   ├── outputs.tf
+    │   │   ├── peerings.tf
+    │   │   ├── subnets.tf
+    │   │   ├── variables.tf
+    │   │   └── vnets.tf
+    │   ├── private_dns
+    │   │   ├── main.tf
+    │   │   ├── outputs.tf
+    │   │   └── variables.tf
+    │   ├── private_endpoint
+    │   │   ├── main.tf
+    │   │   ├── outputs.tf
+    │   │   └── variables.tf
+    │   ├── resource_group
+    │   │   ├── main.tf
+    │   │   ├── outputs.tf
+    │   │   └── variables.tf
+    │   ├── storage_boot_diagnostics
+    │   │   ├── main.tf
+    │   │   └── outputs.tf
+    │   └── web_app
+    │       ├── main.tf
+    │       ├── outputs.tf
+    │       └── variables.tf
+    ├── private-link-lab-tree.txt
+    ├── README.md
+    └── root
+        ├── backend.tf
+        ├── providers.tf
+        └── versions.tf
