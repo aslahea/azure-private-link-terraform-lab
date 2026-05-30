@@ -1,9 +1,6 @@
 locals {
-  # Get all VNet keys
   vnet_keys_list = keys(var.vnets)
 
-  # Generate all unique pair combinations for bidirectional peering
-  # For N VNets, this automatically generates N * (N - 1) peering directions.
   peering_pairs = merge([
     for src_key in local.vnet_keys_list : {
       for dst_key in local.vnet_keys_list :
