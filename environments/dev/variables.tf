@@ -26,3 +26,33 @@ variable "vnets" {
     }))
   }))
 }
+
+variable "storage_account_name" {
+  type        = string
+  description = "Globally unique storage account name"
+}
+
+variable "account_tier" {
+  type        = string
+  description = "Storage account performance tier"
+}
+
+variable "replication_type" {
+  type        = string
+  description = "Storage replication type"
+}
+
+variable "storage_account_kind" {
+  type        = string
+  description = "Storage account kind"
+}
+
+variable "allow_nested_items_to_be_public" {
+  type        = bool
+  description = "Controls whether blob data can be publicly accessible."
+}
+
+variable "is_https_only_enabled" {
+  type        = bool
+  description = "Forces HTTPS-only traffic to the storage account."
+}
