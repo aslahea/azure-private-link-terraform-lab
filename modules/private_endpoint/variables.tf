@@ -1,8 +1,3 @@
-variable "name" {
-  type        = string
-  description = "Name of the private endpoint"
-}
-
 variable "resource_group_name" {
   type        = string
   description = "Name of the resource group"
@@ -15,21 +10,25 @@ variable "location" {
 
 variable "subnet_id" {
   type        = string
-  description = "ID of the subnet where the private endpoint will be attached"
+  description = "ID of the subnet for the private endpoint"
 }
 
 variable "private_connection_resource_id" {
   type        = string
-  description = "Resource ID of the target resource (e.g. storage account, web app)"
+  description = "ID of the resource to connect to"
+}
+
+variable "name" {
+  type        = string
+  description = "Name of the private endpoint"
 }
 
 variable "subresource_names" {
   type        = list(string)
-  description = "Subresource names (e.g. ['blob'] for storage account, ['sites'] for web app)"
+  description = "List of subresource names (e.g. ['blob'])"
 }
 
 variable "tags" {
   type        = map(string)
   description = "Tags to apply"
-  default     = {}
 }

@@ -31,7 +31,7 @@ module "storage_account" {
 module "private_endpoint_storage" {
   source = "../../modules/private_endpoint"
 
-  name                           = "pe-${var.storage_account_name}"
+  name                           = var.private_endpoint_name
   resource_group_name            = module.resource_group.name
   location                       = module.resource_group.location
   subnet_id                      = module.network.private_endpoint_subnet_id
