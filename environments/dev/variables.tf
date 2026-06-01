@@ -14,6 +14,8 @@ variable "tags" {
   description = "Tags to apply to all resources"
 }
 
+# network module variables
+
 variable "vnets" {
   type = map(object({
     name = string
@@ -25,7 +27,10 @@ variable "vnets" {
       delegation                            = optional(string)
     }))
   }))
+  description = "Map of VNets and their subnets to be created"
 }
+
+# storage account module variables
 
 variable "storage_account_name" {
   type        = string
@@ -55,4 +60,33 @@ variable "allow_nested_items_to_be_public" {
 variable "is_https_only_enabled" {
   type        = bool
   description = "Forces HTTPS-only traffic to the storage account."
+}
+
+# private endpoint module variables
+
+variable "private_endpoint_name" {
+  type        = string
+  description = "Name of the private endpoint"
+}
+
+# Linux VM module Variables
+
+variable "vm_name" {
+  type = string
+  description = "Name of the virtual machine"
+}
+
+variable "username" {
+  type = string
+  description = "Admin username for the VM"
+}
+
+variable "size" {
+  type = string
+  description = "Azure Vm size"
+}
+
+variable "public_ip_enabled" {
+  type = bool
+  description = "Enable public IP for the VM"
 }
