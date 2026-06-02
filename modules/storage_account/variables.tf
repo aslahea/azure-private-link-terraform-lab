@@ -42,3 +42,9 @@ variable "is_https_only_enabled" {
     type        = bool
     description = "Forces HTTPS-only traffic to the storage account."
 }
+
+variable "public_network_access_enabled" {
+  type        = bool
+  description = "Whether public network access is allowed for this storage account."
+  default     = false
+}

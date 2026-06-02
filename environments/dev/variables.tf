@@ -90,3 +90,16 @@ variable "public_ip_enabled" {
   type = bool
   description = "Enable public IP for the VM"
 }
+
+# private dns module variables
+
+variable "private_dns_zone_name" {
+  type        = string
+  description = "Name of the Private DNS Zone"
+}
+
+variable "public_network_access_enabled" {
+  type        = bool
+  description = "Whether public network access is allowed for the storage account"
+  default     = false
+}

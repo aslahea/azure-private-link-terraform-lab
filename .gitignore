@@ -16,3 +16,7 @@ terraform.tfvars
 # OS
 .DS_Store
 Thumbs.db
+
+# SSH Keys
+*.pem
+vm_key.pem

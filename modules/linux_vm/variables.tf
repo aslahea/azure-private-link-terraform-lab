@@ -13,11 +13,6 @@ variable "username" {
     description = "username of the VM"
 }
 
-variable "ssh_public_key" {
-    type = string
-    description = "Public key for the SSH key pair"
-}
-
 variable "resource_group_name" {
     type = string
     description = "Name of the resource group"
@@ -41,4 +36,10 @@ variable "size" {
 variable "public_ip_enabled" {
     type = bool
     description = "Enable public IP for the VM"
+}
+
+variable "custom_data" {
+  type        = string
+  description = "Custom user data script for the VM"
+  default     = null
 }
