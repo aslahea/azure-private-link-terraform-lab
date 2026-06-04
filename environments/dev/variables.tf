@@ -72,22 +72,22 @@ variable "private_endpoint_name" {
 # Linux VM module Variables
 
 variable "vm_name" {
-  type = string
+  type        = string
   description = "Name of the virtual machine"
 }
 
 variable "username" {
-  type = string
+  type        = string
   description = "Admin username for the VM"
 }
 
 variable "size" {
-  type = string
+  type        = string
   description = "Azure Vm size"
 }
 
 variable "public_ip_enabled" {
-  type = bool
+  type        = bool
   description = "Enable public IP for the VM"
 }
 
