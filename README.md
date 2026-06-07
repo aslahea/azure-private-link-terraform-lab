@@ -1,7 +1,8 @@
 # 🌐 Azure Private Link & Private DNS Terraform Lab
 [![Terraform](https://img.shields.io/badge/Terraform-%235C4EE5.svg?style=for-the-badge&logo=terraform&logoColor=white)](https://www.terraform.io/)
 [![Azure](https://img.shields.io/badge/azure-%230072C6.svg?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://azure.microsoft.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+
 
 An enterprise-grade, modular Terraform lab demonstrating a **Zero Trust** private network architecture on Microsoft Azure. This project showcases how to isolate an Azure Storage Account (Blob Service), disable its public endpoint, and establish secure access exclusively through a **Private Endpoint** and custom **Private DNS Zone** topology.
 
@@ -72,6 +73,7 @@ The project utilizes a highly modular structure allowing for clean separation of
 │   ├── private_endpoint/    # Private link endpoint configuration
 │   ├── private_dns/         # Private DNS Zone and VNet linking
 │   └── linux_vm/            # Linux VM provisioning with SSH key generation
+└── LICENSE                  # MIT License file
 ```
 
 ---
@@ -179,3 +181,10 @@ From the VM, execute a command to write to or read from the storage account usin
 > *   **Zero Trust Perimeter**: The Storage Account is completely isolated from the internet.
 > *   **Minimal SSH Access**: SSH rules inside the NSG can be locked down to specific source IP ranges for production.
 > *   **Automatic Key Generation**: Private SSH keys are generated in-memory during provisioning using Terraform's TLS provider rather than being stored statically in repository files.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
